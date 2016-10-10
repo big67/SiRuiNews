@@ -26,7 +26,6 @@ $(function(){
         },
 
         loadUpFn : function(me){
-
             //**************************************************************************************************************
             $.ajax({
                 type : "get",
@@ -44,23 +43,23 @@ $(function(){
                     }
                     for(var i=0; i<jsonLength; i++)
                     {
-                        result += '<table class="tab">'+
+                        result +=  '<table class="tab" cellpadding="0" cellspacing="0">'+
                             '<tr>'+
                             '<td class="td1">'+
-                            '<img class="img" src="../img/k1.jpg" >'+
+                            '<img class="img1" title="loading..." alt="loading..." src="../img/k1.jpg" >'+
                             '</td>'+
                             '<td>'+
                             '<span class="number">'+jsondata[i].id+'</span>'+
                             '<span class="date">'+jsondata[i].releasedate+'</span>'+
-                            '<p class="title">'+jsondata[i].articletitle+'</p>'+
+                            '<p class="title">'+jsondata[i].url+'</p>'+
                             '<p class="intro">'+jsondata[i].summary+'</p>'+
-                            '<span class="praise">'+jsondata[i].praisenum+'</span>'+
-                            '&nbsp;&nbsp;&nbsp;&nbsp;'+
-                            '<span class="comment">'+jsondata[i].commentnum+'</span>'+
-                            '<p class="hyperlink">'+jsondata[i].url+'</p>'+
+                            '<span class="praise">'+'<img class="img2" src="../img/zs.png">'+'('+jsondata[i].praisenum+')'+'</span>'+
+                            '&nbsp;'+
+                            '<span class="comment">'+'<img class="img3" src="../img/pl.png">'+'('+jsondata[i].commentnum+')'+'</span>'+
                             '</td>'+
                             '</tr>'+
                             '</table>';
+
                         //var imgs=document.getElementsByName('img');
 
 
@@ -97,7 +96,7 @@ $(function(){
 
                 },
                 error: function(xhr, type){
-                    alert('Ajax error!');
+                    alert('加载失败!');
                     // 即使加载出错，也得重置
                     me.resetload();
                 }
@@ -130,24 +129,23 @@ $(function(){
                     }
                     for(var i = pageStart; i < pageEnd; i++)
                     {
-
-                        result += '<table class="tab">'+
+                        result += '<table class="tab" cellpadding="0" cellspacing="0">'+
                             '<tr>'+
                             '<td class="td1">'+
-                            '<img class="img" src="../img/k1.jpg" >'+
+                            '<img class="img1" title="loading..." alt="loading..." src="../img/k1.jpg" >'+
                             '</td>'+
                             '<td>'+
                             '<span class="number">'+jsondata[i].id+'</span>'+
                             '<span class="date">'+jsondata[i].releasedate+'</span>'+
-                            '<p class="title">'+jsondata[i].articletitle+'</p>'+
+                            '<p class="title">'+jsondata[i].url+'</p>'+
                             '<p class="intro">'+jsondata[i].summary+'</p>'+
-                            '<span class="praise">'+jsondata[i].praisenum+'</span>'+
-                            '&nbsp;&nbsp;&nbsp;&nbsp;'+
-                            '<span class="comment">'+jsondata[i].commentnum+'</span>'+
-                            '<p class="hyperlink">'+jsondata[i].url+'</p>'+
+                            '<span class="praise">'+'<img class="img2" src="../img/zs.png">'+'('+jsondata[i].praisenum+')'+'</span>'+
+                            '&nbsp;'+
+                            '<span class="comment">'+'<img class="img3" src="../img/pl.png">'+'('+jsondata[i].commentnum+')'+'</span>'+
                             '</td>'+
                             '</tr>'+
                             '</table>';
+
 
                         if((i + 1) >= jsonLength){
                             // 锁定
@@ -188,7 +186,7 @@ $(function(){
 
                 },
                 error: function(xhr, type){
-                    alert('Ajax error!');
+                    alert('加载失败!');
                     // 即使加载出错，也得重置
                     me.resetload();
                 }

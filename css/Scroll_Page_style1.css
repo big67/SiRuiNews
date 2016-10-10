@@ -4,40 +4,55 @@
     height: 150px;
     border-left: none;
     border-right: none;
+    border-top: none;
+    border-collapse: collapse;
+    cursor: pointer;
 }
 .td1{
     width: 140px;
 }
-.img{
+.img1{
     width: 140px;
     height: 150px;
     background-color: #44ff27;
+    cursor: pointer;
+    color: #999999;
+}
+.img2{
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+.img3{
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
 }
 .number{
     font-size: 6px;
-
+    color: #999999;
 }
 .title{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-
 }
+.title a{
+    color: #000000;
+}
+
 .intro{
-    font-size: 6px;
+    font-size: 10px;
 }
 .praise{
     font-size: 6px;
-
+    color: #333333;
 }
 .comment{
     font-size: 6px;
-
+    color: #333333;
 }
-
 .date{
     float: right;
     font-size: 8px;
-}
-.hyperlink{
-    font-size: 8px;
+    color: #999999;
 }
