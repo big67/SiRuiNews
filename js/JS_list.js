@@ -1,6 +1,34 @@
 
 
 
+function getContant(jsondata){
+
+    return '<table class="tab" cellpadding="0" cellspacing="0">'+
+    '<tr>'+
+    '<td class="td1">'+
+    '<img  class="img1" title="loading..." alt="loading..." src="http://www.sirui-photo.com/uploadfile/'+jsondata.picurl + '">'+
+    '</td>'+
+    '<td>'+
+    '<div>'+
+    '<p class="title">'+jsondata.url+'</p>'+
+    '<p class="intro">'+jsondata.summary+'</p>'+
+    '<div class="bottom-container">'+
+        '<span class="post-time">'+jsondata.releasedate+'</span>'+
+        '<div class="bottom-right">' +
+    '<span class="praise">'+'<img class="img2" src="../img/zs.png">'+'  100'+'</span>'+
+    '&nbsp;'+
+    '<span class="comment">'+'<img class="img3" src="../img/pl.png">'+'  124'+'</span>'+
+        '</div>'+
+    '</div>'+
+        //'<span class="praise">'+'<img class="img2" src="../img/zs.png">'+'('+jsondata[i].praisenum+')'+'</span>'+
+        //'&nbsp;'+
+        //'<span class="comment">'+'<img class="img3" src="../img/pl.png">'+'('+jsondata[i].commentnum+')'+'</span>'+
+    '</div>' +
+    '</td>'+
+    '</tr>'+
+    '</table>'
+
+}
 
 
 $(function(){
@@ -25,6 +53,7 @@ $(function(){
             domNoData  : '<div class="dropload-noData">暂无数据</div>'
         },
 
+
         loadUpFn : function(me){
             //**************************************************************************************************************
             $.ajax({
@@ -43,22 +72,7 @@ $(function(){
                     }
                     for(var i=0; i<jsonLength; i++)
                     {
-                        result +=  '<table class="tab" cellpadding="0" cellspacing="0">'+
-                            '<tr>'+
-                            '<td class="td1">'+
-                            '<img class="img1" title="loading..." alt="loading..." src="../img/k1.jpg" >'+
-                            '</td>'+
-                            '<td>'+
-                            '<span class="number">'+jsondata[i].id+'</span>'+
-                            '<span class="date">'+jsondata[i].releasedate+'</span>'+
-                            '<p class="title">'+jsondata[i].url+'</p>'+
-                            '<p class="intro">'+jsondata[i].summary+'</p>'+
-                            '<span class="praise">'+'<img class="img2" src="../img/zs.png">'+'('+jsondata[i].praisenum+')'+'</span>'+
-                            '&nbsp;'+
-                            '<span class="comment">'+'<img class="img3" src="../img/pl.png">'+'('+jsondata[i].commentnum+')'+'</span>'+
-                            '</td>'+
-                            '</tr>'+
-                            '</table>';
+                        result +=  getContant(jsondata[i]);
 
                         //var imgs=document.getElementsByName('img');
 
@@ -129,22 +143,7 @@ $(function(){
                     }
                     for(var i = pageStart; i < pageEnd; i++)
                     {
-                        result += '<table class="tab" cellpadding="0" cellspacing="0">'+
-                            '<tr>'+
-                            '<td class="td1">'+
-                            '<img class="img1" title="loading..." alt="loading..." src="../img/k1.jpg" >'+
-                            '</td>'+
-                            '<td>'+
-                            '<span class="number">'+jsondata[i].id+'</span>'+
-                            '<span class="date">'+jsondata[i].releasedate+'</span>'+
-                            '<p class="title">'+jsondata[i].url+'</p>'+
-                            '<p class="intro">'+jsondata[i].summary+'</p>'+
-                            '<span class="praise">'+'<img class="img2" src="../img/zs.png">'+'('+jsondata[i].praisenum+')'+'</span>'+
-                            '&nbsp;'+
-                            '<span class="comment">'+'<img class="img3" src="../img/pl.png">'+'('+jsondata[i].commentnum+')'+'</span>'+
-                            '</td>'+
-                            '</tr>'+
-                            '</table>';
+                        result += getContant(jsondata[i]);
 
 
                         if((i + 1) >= jsonLength){
